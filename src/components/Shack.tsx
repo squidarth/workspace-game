@@ -11,7 +11,7 @@ function Shack() {
   const dispatch = useDispatch()
 
   return (
-    <Window defaultPosition={{x: 200, y: 60}} onClose={() => dispatch(closeWindow('shack'))} onClick={() => dispatch(focusWindow('shack'))} open={windowShouldBeOpen} focused={focusedWindow}>
+    <Window defaultPosition={{x: 200, y: -60}} onClose={() => dispatch(closeWindow('shack'))} onClick={() => dispatch(focusWindow('shack'))} open={windowShouldBeOpen} focused={focusedWindow}>
       <div>Shack</div>
     </Window>
   )

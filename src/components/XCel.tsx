@@ -12,7 +12,7 @@ function XCel() {
   const dispatch = useDispatch()
 
   return (
-    <Window defaultPosition={{x: 250, y: 0}} onClose={() => dispatch(closeWindow('xcel'))} onClick={() => dispatch(focusWindow('xcel'))} open={windowShouldBeOpen} focused={focusedWindow}>
+    <Window defaultPosition={{x: 250, y: -100}} onClose={() => dispatch(closeWindow('xcel'))} onClick={() => dispatch(focusWindow('xcel'))} open={windowShouldBeOpen} focused={focusedWindow}>
       <div>XCel</div>
     </Window>
   )

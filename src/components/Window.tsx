@@ -6,7 +6,7 @@ function Window(props: { defaultPosition: {x: number, y: number}, open: boolean,
     return (
           <Draggable defaultPosition={props.defaultPosition} handle=".window-drag">
         <div onClick={props.onClick} style={{ overflow: 'auto', position: 'absolute', display: props.open ? 'inline-block': 'none', zIndex: props.focused ? 500 : 0}}>
-                 <ResizableBox className="box" width={400} height={400} >
+                 <ResizableBox className="box" width={600} height={400} >
                   <div className="window no-cursor">
                     <div className="cursor window-drag">
                       <span onClick={props.onClose} className="window-close-button">

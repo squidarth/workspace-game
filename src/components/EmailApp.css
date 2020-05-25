@@ -3,13 +3,31 @@
 }
 
 .email-list {
-
-    margin-top: 10px;
     flex: 30%;
     border-right: black 1px solid;
 }
+
+.email-list-content {
+    margin-top: 10px;
+}
+.email-selector {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+}
+.email-selector:first-child  {
+    border: none;
+}
+
 .focused-email {
     padding-left: 10px;
     margin-top: 10px;
     flex: 70%;
+}
+
+.body {
+    margin-top: 10px;
+    line-height: 16px;
+  white-space: pre-line;
+
 }
