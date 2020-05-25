@@ -1,0 +1,10 @@
+.icon-title {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.icon {
+    max-width: 90px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
