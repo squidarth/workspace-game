@@ -1,4 +1,5 @@
-import { WindowAction } from './store'
+import { Email } from './story/StoryTypes'
+import { WindowAction, FocusedEmailAction, NewTriggersAction } from './store';
 
 function focusWindow(window: string) : WindowAction {
   return {
@@ -14,4 +15,22 @@ function closeWindow(window: string): WindowAction {
   }
 }
 
-export { focusWindow, closeWindow }
+function selectEmail(emailId: number): FocusedEmailAction {
+  return {
+    type: 'FOCUSED_EMAIL',
+    emailId: emailId
+  }
+}
+
+function newTrigger(email: Email): NewTriggersAction {
+  let nextEmailIds = email.replyTriggers.filter((trigger) => trigger.type === "email").map((trigger) => trigger.id)
+  return {
+    type: 'NEW_TRIGGER',
+    newEmailIds: nextEmailIds,
+    newShackIds: []
+  }
+}
+
+
+
+export { focusWindow, closeWindow, selectEmail, newTrigger }

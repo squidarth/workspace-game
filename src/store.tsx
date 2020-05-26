@@ -36,9 +36,42 @@ function focusedWindowReducer(state: FocusedWindow = 'email', action: WindowActi
   return state
 }
 
+export type FocusedEmailAction = {
+  type: string,
+  emailId: number
+}
+
+export type NewTriggersAction = {
+  type: string,
+  newEmailIds: number[],
+  newShackIds: number[]
+}
+
+function focusedEmailIdReducer(state: number = 0, action: FocusedEmailAction) {
+  switch (action.type) {
+    case 'FOCUSED_EMAIL':
+      return action.emailId
+  }
+  return state
+}
+
+function emailIdsToReadReducer(state: number[] = [0,1], action: NewTriggersAction) {
+  switch (action.type) {
+    case 'NEW_TRIGGER':
+      return state.concat(action.newEmailIds)
+  }
+  return state
+}
+
+let emailsReducer = combineReducers({
+  focusedEmail: focusedEmailIdReducer,
+  emailIdsToRead: emailIdsToReadReducer
+})
+
 let rootReducer = combineReducers({
   openWindows: openWindowsReducer,
-  focusedWindow: focusedWindowReducer
+  focusedWindow: focusedWindowReducer,
+  emails: emailsReducer
 })
 
 let store = createStore(
